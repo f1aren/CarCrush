@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class BlocksBehaviour : MonoBehaviour {
 
-    public static float speed {get; set;}
+    public static float speed;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
 	// Update is called once per frame
 	void Update () {
         if (!SpawnBarriers.isGameOver) {

@@ -7,14 +7,9 @@ using TMPro;
 public class Buttons : MonoBehaviour {
 
 	public TextMeshProUGUI ScoreTextForPause;
-	private float defaultSpeedOfBlocks;
+	//private float defaultSpeedOfBlocks;
 	public GameObject PauseMenu;
-	// Use this for initialization
-	void Start () {
-		//PauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
-		
-	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (Application.platform == RuntimePlatform.Android) {
@@ -28,7 +23,7 @@ public class Buttons : MonoBehaviour {
 		if (!SpawnBarriers.isGameOver) {
 			ScoreTextForPause.SetText(CarScript.passedBarriers.ToString()); // очки последней игры
 			Time.timeScale = 0;
-			defaultSpeedOfBlocks = BlocksBehaviour.speed; // сохранение скорости блоков
+			//defaultSpeedOfBlocks = BlocksBehaviour.speed; // сохранение скорости блоков
 			BlocksBehaviour.speed = 0; // скорость блоков
 			SpawnBarriers.isGameOver = true;
 			PauseMenu.gameObject.SetActive(true); // показывает меню паузы игры 
@@ -38,7 +33,7 @@ public class Buttons : MonoBehaviour {
 
 	public void ResumeLevel () {
 		Time.timeScale = 1;
-		BlocksBehaviour.speed = defaultSpeedOfBlocks;
+		//BlocksBehaviour.speed = defaultSpeedOfBlocks;
 		SpawnBarriers.isGameOver = false;
 		PauseMenu.gameObject.SetActive(false); // показывает меню паузы игры 
 		CarScript.SteeringWheel.gameObject.SetActive(true);  // показывает руль

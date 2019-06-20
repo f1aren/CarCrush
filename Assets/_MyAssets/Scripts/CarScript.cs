@@ -6,17 +6,15 @@ using UnityEngine.SceneManagement;
 using TMPro;
 
 public class CarScript : MonoBehaviour {
-
-    //public Text counter;
-    public static Vector3 startPos {get; set; } // позиция старта
+    public static Vector3 startPos; // позиция старта
     public TextMeshProUGUI counter;
     public TextMeshProUGUI FinalScoreText;
     public TextMeshProUGUI RecordScoreText;
     public TextMeshProUGUI RecordStringText;
-    public static int passedBarriers { get; set; }
-    public static GameObject GameOverMenu { get; set; }
-    public static GameObject Car { get; set; }
-    public static GameObject SteeringWheel { get; set; }
+    public static int passedBarriers;
+    public static GameObject GameOverMenu;
+    public static GameObject Car;
+    public static GameObject SteeringWheel;
 
     public GameObject GameOverUI;
 
@@ -26,15 +24,10 @@ public class CarScript : MonoBehaviour {
     //private Camera cam;
     void Start () {
         GameOverMenu = GameOverUI;
-        //GameOverMenu = GameObject.Find("GameOverMenu");
-        //Instantiate(GameOverMenu, new Vector3(0f, 0f, 0f), Quaternion.identity);
-        //GameOverMenu = GameObject.FindGameObjectWithTag("GameOver");
         GameOverMenu.gameObject.SetActive(false);
         Car = GameObject.Find("Car");
         SteeringWheel = GameObject.Find("Steering Wheel");
         startPos = Car.transform.position;
-        //spriteCar = gameObject.GetComponent<SpriteRenderer>();
-        //cam = Camera.main;
     }
 	
 	// Update is called once per frame
